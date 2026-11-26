@@ -1,0 +1,24 @@
+{
+  "n": {
+    ".read": true,
+    ".indexOn": [
+      "b"
+    ],
+    "$h": {
+      ".write": "auth != null && newData.exists()",
+      ".validate": "$h.matches(/^[a-z0-9]{8,20}$/) && newData.hasChildren(['n','b']) && newData.child('n').isString() && newData.child('n').val().length >= 1 && newData.child('n').val().length <= 16 && newData.child('b').isNumber() && newData.child('b').val() >= 0 && newData.child('b').val() <= 5000000000 && (!newData.child('i').exists() || (newData.child('i').isString() && newData.child('i').val().length <= 24)) && (!data.exists() || newData.child('b').val() === data.child('b').val())"
+    }
+  },
+  "t": {
+    "$day": {
+      ".read": true,
+      ".indexOn": [
+        "b"
+      ],
+      "$h": {
+        ".write": "auth != null && newData.exists()",
+        ".validate": "$day.matches(/^20[0-9][0-9][01][0-9][0-3][0-9]$/) && $h.matches(/^[a-z0-9]{8,20}$/) && newData.hasChildren(['n','b']) && newData.child('n').isString() && newData.child('n').val().length >= 1 && newData.child('n').val().length <= 16 && newData.child('b').isNumber() && newData.child('b').val() >= 0 && newData.child('b').val() <= 5000000000 && (!newData.child('i').exists() || (newData.child('i').isString() && newData.child('i').val().length <= 24)) && (!data.exists() || newData.child('b').val() === data.child('b').val())"
+      }
+    }
+  }
+}
